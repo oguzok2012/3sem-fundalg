@@ -6,9 +6,14 @@
 #include "repo.h"
 #include <string.h>
 
-#define MAX_FILENAME_LENGTH 256
-#define FILE_COUNT 3
 
+#define MAX_STRINGS 256
+#define MAX_LENGTH 100
+
+#define DECLARE_STRING_ARRAY(name, size) \
+    char name##Strings[size][MAX_LENGTH]; \
+    char *name[size]; \
+    for (int i = 0; i < size; i++) { name[i] = name##Strings[i]; }
 
 typedef enum kOpts {
     OPT_L,
@@ -28,10 +33,12 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
     if (argv[1][0] != '-') {
         return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Setting argument(s) must be started with '-'");
     }
-
     switch (argv[1][1]) {
         case 'l': 
             *option = OPT_L;
+            break;
+        case 'r':
+            *option = OPT_R;
             break;
         case 'u':
             *option = OPT_U;
@@ -42,7 +49,6 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
         case 'c':
             *option = OPT_C;
             break;
-        
         default: 
             return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Unknown option");
     }
@@ -75,16 +81,46 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
 
 // HANDLERS
 
-int HandlerOptL(char** argh) {
-    printf("\n");
-    printf("\n");
+int HandlerOptL(char** argh, char *output) {
+    int str_len = strlen(argh[0]); 
+    sprintf(output, "%d", str_len);
 }
 
 
-int HandlerOptC(char** argh) {
-    printf("\n");
-    printf("\n");
+int HandlerOptR(char** argh, char *output) {
+    char string[MAX_LENGTH];
+    strcpy(string, argh[0]);
+
+    int left = 0;
+    int right = strlen(string) - 1;
+    char temp;
+
+    while (left < right) {
+        temp = string[left];
+        string[left] = string[right];
+        string[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    strcpy(output, string);
 }
+
+
+int HandlerOptU(char** argh, char *output) {
+    char string[MAX_LENGTH];
+    strcpy(string, argh[0]);
+
+    for (int i = 0; i < strlen(string); i++) {
+        if (i % 2 == 1) {
+            output[i] = toupper(string[i]);
+        } else {
+            output[i]
+        }
+    }
+}
+
 
 // \== Handlers
 
@@ -92,13 +128,11 @@ int HandlerOptC(char** argh) {
 int main(int argc, char **argv) {
 
     kOpts opt = OPT_UNKNOWN;
+    DECLARE_STRING_ARRAY(argh, MAX_STRINGS)
 
-    char *(argh[256]);
-
-    
-    int (*handlers[])(char **argh) = {
+    int (*handlers[])(char **argh, char *output) = {
         HandlerOptL,
-        HandlerOptC 
+        HandlerOptR,
     };
     
     Response response = GetOpts(argc, argv, &opt, argh); 
@@ -106,6 +140,10 @@ int main(int argc, char **argv) {
         fprintf(stderr, "%s\n", response.status.msg);
         return 1;
     }
-    handlers[opt](argh);
+
+    char output[MAX_LENGTH];
+    handlers[opt](argh, output);
+
+    printf("output: %s\n", output);
     return 0;
 }
