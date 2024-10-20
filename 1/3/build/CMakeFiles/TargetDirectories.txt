@@ -1,0 +1,3 @@
+/home/alexandr/sem3/fundalg/1/3/build/CMakeFiles/app.dir
+/home/alexandr/sem3/fundalg/1/3/build/CMakeFiles/edit_cache.dir
+/home/alexandr/sem3/fundalg/1/3/build/CMakeFiles/rebuild_cache.dir

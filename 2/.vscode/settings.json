@@ -1,0 +1,12 @@
+{
+    "cmake.sourceDirectory": "/home/alexandr/sem3/fundalg/2/1",
+    "cmake.debugConfig": {
+        "args": [
+            "-c",
+            "1",
+            "q",
+            "q",
+            "q"
+        ]
+    }
+}
