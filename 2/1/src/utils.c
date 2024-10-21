@@ -146,3 +146,43 @@ Response OpenFiles(char file_names[FILE_COUNT][MAX_FILENAME_LENGTH], char *modes
     return CreateSuccessResponse(NULL);
 }
 
+
+char *InitStr(size_t length) {
+    char *str = (char *)malloc((length + 1) * sizeof(char));
+    return str;
+}
+
+
+size_t Strlen(const char *str) {
+    const char *s = str;
+    while (*s) s++;
+    return s - str;
+}
+
+char *Strcpy(char *dest, const char *src) {
+    char *ptr = dest;
+    while ((*ptr++ = *src++));
+    return dest;
+}
+
+int Toupper(int c) {
+    if (c >= 'a' && c <= 'z') {
+        return c - ('a' - 'A');
+    }
+    return c;
+}
+
+Response concat_strings(const char *str1, const char *str2) {
+    size_t length1 = strlen(str1);
+    size_t length2 = strlen(str2);
+
+    char *result = (char *)malloc((length1 + length2 + 1) * sizeof(char));
+    
+    if (result == NULL) {
+        return CreateErrorResponse(ERROR_MEMORY, "Memory allocation error");
+    }
+    strcpy(result, str1);
+    strcat(result, str2);
+
+    return CreateSuccessResponse(result);
+}

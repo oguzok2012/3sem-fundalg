@@ -12,4 +12,9 @@
 Response Atoi(const char* str);
 Response Atof(const char* str);
 
+size_t Strlen(const char *str);
+char *Strcpy(char *dest, const char *src);
+int Toupper(int c);
+char *InitStr(size_t length);
+
 #endif

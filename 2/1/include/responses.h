@@ -11,7 +11,8 @@ typedef enum StatusCode {
     ERROR_ATOF,
     ERROR_FILE,
     ERROR_BUFFER_OVERFLOW,
-    ERROR_PATH
+    ERROR_PATH,
+    ERROR_MEMORY
 } StatusCode;
 
 

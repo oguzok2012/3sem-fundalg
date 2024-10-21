@@ -4,7 +4,6 @@
 #include "responses.h"
 #include "utils.h"
 #include "repo.h"
-#include <string.h>
 
 
 #define MAX_STRINGS 256
@@ -89,10 +88,10 @@ int HandlerOptL(char** argh, char *output) {
 
 int HandlerOptR(char** argh, char *output) {
     char string[MAX_LENGTH];
-    strcpy(string, argh[0]);
+    Strcpy(string, argh[0]);
 
     int left = 0;
-    int right = strlen(string) - 1;
+    int right = Strlen(string) - 1;
     char temp;
 
     while (left < right) {
@@ -104,21 +103,29 @@ int HandlerOptR(char** argh, char *output) {
         right--;
     }
 
-    strcpy(output, string);
+    Strcpy(output, string);
 }
 
 
 int HandlerOptU(char** argh, char *output) {
     char string[MAX_LENGTH];
-    strcpy(string, argh[0]);
+    Strcpy(string, argh[0]);
 
-    for (int i = 0; i < strlen(string); i++) {
+    for (int i = 0; i < Strlen(string); i++) {
         if (i % 2 == 1) {
-            output[i] = toupper(string[i]);
+            output[i] = Toupper(string[i]);
         } else {
-            output[i]
+            output[i] = string[i];
         }
     }
+}
+
+int HandlerOptN(char** argh, char *output) {
+    char string[MAX_LENGTH];
+    Strcpy(string, argh[0]);
+
+    char *digits = InitStr(MAX_LENGTH);
+    
 }
 
 
@@ -133,6 +140,8 @@ int main(int argc, char **argv) {
     int (*handlers[])(char **argh, char *output) = {
         HandlerOptL,
         HandlerOptR,
+        HandlerOptU,
+        HandlerOptN,
     };
     
     Response response = GetOpts(argc, argv, &opt, argh); 
@@ -141,9 +150,15 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    char output[MAX_LENGTH];
-    handlers[opt](argh, output);
+    char *output = InitStr(MAX_LENGTH);
+    if (output == NULL) {
+        fprintf(stderr, "Memory allocation error\n");
+        return 1;
+    }
 
+    if (handlers[opt](argh, output) != 0) {
+        return 1;
+    }
     printf("output: %s\n", output);
     return 0;
 }
