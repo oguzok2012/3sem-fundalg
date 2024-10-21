@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-app-Debug-0d5c8630f07cc64901a4.json",
+					"jsonFile" : "target-app-Debug-8cf705c9f785fca08ce4.json",
 					"name" : "app",
 					"projectIndex" : 0
 				}
@@ -50,7 +50,7 @@
 	"paths" : 
 	{
 		"build" : "/home/alexandr/sem3/fundalg/2/build",
-		"source" : "/home/alexandr/sem3/fundalg/2/1"
+		"source" : "/home/alexandr/sem3/fundalg/2/8"
 	},
 	"version" : 
 	{
