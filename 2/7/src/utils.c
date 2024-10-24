@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "../include/utils.h"
 #include "stdio.h"
 #include <stdlib.h>
 #include <ctype.h>
@@ -113,76 +113,9 @@ Response Atof(const char* str) {
 }
 
 
-Response CheckIfTheSameFile(const char* path1, const char* path2) {
-    char resolved_path1[MAX_FILENAME_LENGTH];
-    char resolved_path2[MAX_FILENAME_LENGTH];
-    
-    if (realpath(path1, resolved_path1) == NULL) {
-        return CreateErrorResponse(ERROR_PATH, "Error resolving path1");
+Response CheckOwerflows(double* number) {
+    if (*number == DBL_MAX) {
+        return CreateErrorResponse(ERROR_BUFFER_OVERFLOW, "Buffer overflow");
     }
-    if (realpath(path2, resolved_path2) == NULL) {
-        return CreateErrorResponse(ERROR_PATH, "Error resolving path2");
-    }
-
-    if (strcmp(resolved_path1, resolved_path2) == 0) {
-        return CreateErrorResponse(ERROR_FILE, "Files are the same");
-    }
-    return CreateSuccessResponse(NULL);
-}
-
-
-Response OpenFiles(char file_names[FILE_COUNT][MAX_FILENAME_LENGTH], char *modes, FILE **files, int file_count) {
-
-    for (int i = 0; i < file_count; i++) {
-        files[i] = fopen(file_names[i], &modes[i]);
-
-        if (!files[i]) {
-            for (int j = 0; j < i; j++) {
-                fclose(files[j]);
-            }
-            return CreateErrorResponse(ERROR_FILE, "Error opening file");
-        }
-    }
-    return CreateSuccessResponse(NULL);
-}
-
-
-char *InitStr(size_t length) {
-    char *str = (char *)malloc((length + 1) * sizeof(char));
-    return str;
-}
-
-
-size_t Strlen(const char *str) {
-    const char *s = str;
-    while (*s) s++;
-    return s - str;
-}
-
-char *Strcpy(char *dest, const char *src) {
-    char *ptr = dest;
-    while ((*ptr++ = *src++));
-    return dest;
-}
-
-int Toupper(int c) {
-    if (c >= 'a' && c <= 'z') {
-        return c - ('a' - 'A');
-    }
-    return c;
-}
-
-Response concat_strings(const char *str1, const char *str2) {
-    size_t length1 = strlen(str1);
-    size_t length2 = strlen(str2);
-
-    char *result = (char *)malloc((length1 + length2 + 1) * sizeof(char));
-    
-    if (result == NULL) {
-        return CreateErrorResponse(ERROR_MEMORY, "Memory allocation error");
-    }
-    strcpy(result, str1);
-    strcat(result, str2);
-
-    return CreateSuccessResponse(result);
+    return CreateSuccessResponse(number);
 }

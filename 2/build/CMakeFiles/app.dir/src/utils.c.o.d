@@ -1,6 +1,6 @@
 CMakeFiles/app.dir/src/utils.c.o: \
- /home/alexandr/sem3/fundalg/2/8/src/utils.c /usr/include/stdc-predef.h \
- /home/alexandr/sem3/fundalg/2/8/include/utils.h \
+ /home/alexandr/sem3/fundalg/2/1/src/utils.c /usr/include/stdc-predef.h \
+ /home/alexandr/sem3/fundalg/2/1/include/utils.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -44,7 +44,7 @@ CMakeFiles/app.dir/src/utils.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/alexandr/sem3/fundalg/2/8/include/responses.h /usr/include/stdio.h \
+ /home/alexandr/sem3/fundalg/2/1/include/responses.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \

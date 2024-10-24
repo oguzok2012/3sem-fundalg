@@ -65,7 +65,15 @@ CMakeFiles/app.dir/src/main.c.o: ../src/main.c \
   ../include/responses.h \
   ../include/repo.h \
   ../include/utils.h \
-  /usr/include/ctype.h
+  /usr/include/ctype.h \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h
 
 CMakeFiles/app.dir/src/repo.c.o: ../src/repo.c \
   /usr/include/stdc-predef.h \
@@ -129,7 +137,15 @@ CMakeFiles/app.dir/src/repo.c.o: ../src/repo.c \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/ctype.h
+  /usr/include/ctype.h \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h
 
 CMakeFiles/app.dir/src/responses.c.o: ../src/responses.c \
   /usr/include/stdc-predef.h \
@@ -227,7 +243,17 @@ CMakeFiles/app.dir/src/utils.c.o: ../src/utils.c \
 
 ../src/responses.c:
 
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
 ../src/repo.c:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/math.h:
 
 /usr/include/strings.h:
 
@@ -248,6 +274,8 @@ CMakeFiles/app.dir/src/utils.c.o: ../src/utils.c \
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/ctype.h:
 
@@ -293,6 +321,8 @@ CMakeFiles/app.dir/src/utils.c.o: ../src/utils.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 ../include/repo.h:
@@ -310,6 +340,8 @@ CMakeFiles/app.dir/src/utils.c.o: ../src/utils.c \
 /usr/include/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 

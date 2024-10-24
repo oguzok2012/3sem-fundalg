@@ -4,40 +4,14 @@
 #include "responses.h"
 #include "utils.h"
 #include "repo.h"
-
-
-#define MAX_STRINGS 256
-#define MAX_LENGTH 100
-
-#define DECLARE_STRING_ARRAY(name, size) \
-    char name##Strings[size][MAX_LENGTH]; \
-    char *name[size]; \
-    for (int i = 0; i < size; i++) { name[i] = name##Strings[i]; }
-
-
-
-Response GetOpts(int argc, char** argv, char **argh) {
-    
-}
-
-
-// HANDLERS
-
-int Handler(char** argh) {
-}
-
-
-// \== Handlers
-
+#include <string.h>
 
 int main(int argc, char **argv) {
-    DECLARE_STRING_ARRAY(argh, MAX_STRINGS);
+    double result;
+
+    Response re = DichotomyMethod(0, 2.11111, 0.000000000001, equation2, &result);
     
-    Response response = GetOpts(argc, argv, argh); 
-    if (response.status.code != OK) {
-        fprintf(stderr, "%s\n", response.status.msg);
-        return 1;
-    }
+    printf("Result: %lf\n", result);
 
     return 0;
 }

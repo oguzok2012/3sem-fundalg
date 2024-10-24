@@ -1,22 +1,22 @@
 [
 {
   "directory": "/home/alexandr/sem3/fundalg/2/build",
-  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/8/include -g -std=gnu99 -o CMakeFiles/app.dir/src/responses.c.o -c /home/alexandr/sem3/fundalg/2/8/src/responses.c",
-  "file": "/home/alexandr/sem3/fundalg/2/8/src/responses.c"
+  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/1/include -g -std=gnu99 -o CMakeFiles/app.dir/src/responses.c.o -c /home/alexandr/sem3/fundalg/2/1/src/responses.c",
+  "file": "/home/alexandr/sem3/fundalg/2/1/src/responses.c"
 },
 {
   "directory": "/home/alexandr/sem3/fundalg/2/build",
-  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/8/include -g -std=gnu99 -o CMakeFiles/app.dir/src/utils.c.o -c /home/alexandr/sem3/fundalg/2/8/src/utils.c",
-  "file": "/home/alexandr/sem3/fundalg/2/8/src/utils.c"
+  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/1/include -g -std=gnu99 -o CMakeFiles/app.dir/src/utils.c.o -c /home/alexandr/sem3/fundalg/2/1/src/utils.c",
+  "file": "/home/alexandr/sem3/fundalg/2/1/src/utils.c"
 },
 {
   "directory": "/home/alexandr/sem3/fundalg/2/build",
-  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/8/include -g -std=gnu99 -o CMakeFiles/app.dir/src/repo.c.o -c /home/alexandr/sem3/fundalg/2/8/src/repo.c",
-  "file": "/home/alexandr/sem3/fundalg/2/8/src/repo.c"
+  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/1/include -g -std=gnu99 -o CMakeFiles/app.dir/src/repo.c.o -c /home/alexandr/sem3/fundalg/2/1/src/repo.c",
+  "file": "/home/alexandr/sem3/fundalg/2/1/src/repo.c"
 },
 {
   "directory": "/home/alexandr/sem3/fundalg/2/build",
-  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/8/include -g -std=gnu99 -o CMakeFiles/app.dir/src/main.c.o -c /home/alexandr/sem3/fundalg/2/8/src/main.c",
-  "file": "/home/alexandr/sem3/fundalg/2/8/src/main.c"
+  "command": "/usr/bin/gcc  -I/home/alexandr/sem3/fundalg/2/1/include -g -std=gnu99 -o CMakeFiles/app.dir/src/main.c.o -c /home/alexandr/sem3/fundalg/2/1/src/main.c",
+  "file": "/home/alexandr/sem3/fundalg/2/1/src/main.c"
 }
 ]

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alexandr/sem3/fundalg/2/1
+CMAKE_SOURCE_DIR = /home/alexandr/sem3/fundalg/2/7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alexandr/sem3/fundalg/2/1/build
+CMAKE_BINARY_DIR = /home/alexandr/sem3/fundalg/2/7/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/app.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/responses.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/responses.c.o: ../src/responses.c
 CMakeFiles/app.dir/src/responses.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/app.dir/src/responses.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/responses.c.o -MF CMakeFiles/app.dir/src/responses.c.o.d -o CMakeFiles/app.dir/src/responses.c.o -c /home/alexandr/sem3/fundalg/2/1/src/responses.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/app.dir/src/responses.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/responses.c.o -MF CMakeFiles/app.dir/src/responses.c.o.d -o CMakeFiles/app.dir/src/responses.c.o -c /home/alexandr/sem3/fundalg/2/7/src/responses.c
 
 CMakeFiles/app.dir/src/responses.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/src/responses.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/1/src/responses.c > CMakeFiles/app.dir/src/responses.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/7/src/responses.c > CMakeFiles/app.dir/src/responses.c.i
 
 CMakeFiles/app.dir/src/responses.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/src/responses.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/1/src/responses.c -o CMakeFiles/app.dir/src/responses.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/7/src/responses.c -o CMakeFiles/app.dir/src/responses.c.s
 
 CMakeFiles/app.dir/src/utils.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/utils.c.o: ../src/utils.c
 CMakeFiles/app.dir/src/utils.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/app.dir/src/utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/utils.c.o -MF CMakeFiles/app.dir/src/utils.c.o.d -o CMakeFiles/app.dir/src/utils.c.o -c /home/alexandr/sem3/fundalg/2/1/src/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/app.dir/src/utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/utils.c.o -MF CMakeFiles/app.dir/src/utils.c.o.d -o CMakeFiles/app.dir/src/utils.c.o -c /home/alexandr/sem3/fundalg/2/7/src/utils.c
 
 CMakeFiles/app.dir/src/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/src/utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/1/src/utils.c > CMakeFiles/app.dir/src/utils.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/7/src/utils.c > CMakeFiles/app.dir/src/utils.c.i
 
 CMakeFiles/app.dir/src/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/src/utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/1/src/utils.c -o CMakeFiles/app.dir/src/utils.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/7/src/utils.c -o CMakeFiles/app.dir/src/utils.c.s
 
 CMakeFiles/app.dir/src/repo.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/repo.c.o: ../src/repo.c
 CMakeFiles/app.dir/src/repo.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/app.dir/src/repo.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/repo.c.o -MF CMakeFiles/app.dir/src/repo.c.o.d -o CMakeFiles/app.dir/src/repo.c.o -c /home/alexandr/sem3/fundalg/2/1/src/repo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/app.dir/src/repo.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/repo.c.o -MF CMakeFiles/app.dir/src/repo.c.o.d -o CMakeFiles/app.dir/src/repo.c.o -c /home/alexandr/sem3/fundalg/2/7/src/repo.c
 
 CMakeFiles/app.dir/src/repo.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/src/repo.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/1/src/repo.c > CMakeFiles/app.dir/src/repo.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/7/src/repo.c > CMakeFiles/app.dir/src/repo.c.i
 
 CMakeFiles/app.dir/src/repo.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/src/repo.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/1/src/repo.c -o CMakeFiles/app.dir/src/repo.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/7/src/repo.c -o CMakeFiles/app.dir/src/repo.c.s
 
 CMakeFiles/app.dir/src/main.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/main.c.o: ../src/main.c
 CMakeFiles/app.dir/src/main.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/main.c.o -MF CMakeFiles/app.dir/src/main.c.o.d -o CMakeFiles/app.dir/src/main.c.o -c /home/alexandr/sem3/fundalg/2/1/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alexandr/sem3/fundalg/2/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/main.c.o -MF CMakeFiles/app.dir/src/main.c.o.d -o CMakeFiles/app.dir/src/main.c.o -c /home/alexandr/sem3/fundalg/2/7/src/main.c
 
 CMakeFiles/app.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/app.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/1/src/main.c > CMakeFiles/app.dir/src/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alexandr/sem3/fundalg/2/7/src/main.c > CMakeFiles/app.dir/src/main.c.i
 
 CMakeFiles/app.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/app.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/1/src/main.c -o CMakeFiles/app.dir/src/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alexandr/sem3/fundalg/2/7/src/main.c -o CMakeFiles/app.dir/src/main.c.s
 
 # Object files for target app
 app_OBJECTS = \
@@ -141,7 +141,7 @@ app: CMakeFiles/app.dir/src/repo.c.o
 app: CMakeFiles/app.dir/src/main.c.o
 app: CMakeFiles/app.dir/build.make
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexandr/sem3/fundalg/2/1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alexandr/sem3/fundalg/2/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/app.dir/clean:
 .PHONY : CMakeFiles/app.dir/clean
 
 CMakeFiles/app.dir/depend:
-	cd /home/alexandr/sem3/fundalg/2/1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexandr/sem3/fundalg/2/1 /home/alexandr/sem3/fundalg/2/1 /home/alexandr/sem3/fundalg/2/1/build /home/alexandr/sem3/fundalg/2/1/build /home/alexandr/sem3/fundalg/2/1/build/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alexandr/sem3/fundalg/2/7/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alexandr/sem3/fundalg/2/7 /home/alexandr/sem3/fundalg/2/7 /home/alexandr/sem3/fundalg/2/7/build /home/alexandr/sem3/fundalg/2/7/build /home/alexandr/sem3/fundalg/2/7/build/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/app.dir/depend
 

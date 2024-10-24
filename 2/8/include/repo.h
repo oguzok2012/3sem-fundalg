@@ -9,9 +9,9 @@
 #include <ctype.h>
 #include <string.h>
 
-Response char_to_val(char c, int base);
-char val_to_char(int val);
-Response add_in_base(const char *num1, const char *num2, int base);
-Response sum_in_base(int base, int num_count, ...);
+Response CharToValue(char c, int base);
+char ValueToChar(int val);
+Response AddInBase(const char *num1, const char *num2, int base);
+Response SumInBase(int base, int num_count, ...);
 
 #endif

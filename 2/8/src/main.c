@@ -6,8 +6,10 @@
 #include "repo.h"
 
 
+
+
 int main() {
-    Response r = sum_in_base(16, 3, "1A", "F", "C");
+    Response r = SumInBase(16, 4, "FF", "0", "1", "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
     if (r.status.code != OK) {
         fprintf(stderr, "%s\n", r.status.msg);
         return 1;

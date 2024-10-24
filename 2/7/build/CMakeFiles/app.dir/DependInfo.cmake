@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/alexandr/sem3/fundalg/2/1/src/main.c" "CMakeFiles/app.dir/src/main.c.o" "gcc" "CMakeFiles/app.dir/src/main.c.o.d"
-  "/home/alexandr/sem3/fundalg/2/1/src/repo.c" "CMakeFiles/app.dir/src/repo.c.o" "gcc" "CMakeFiles/app.dir/src/repo.c.o.d"
-  "/home/alexandr/sem3/fundalg/2/1/src/responses.c" "CMakeFiles/app.dir/src/responses.c.o" "gcc" "CMakeFiles/app.dir/src/responses.c.o.d"
-  "/home/alexandr/sem3/fundalg/2/1/src/utils.c" "CMakeFiles/app.dir/src/utils.c.o" "gcc" "CMakeFiles/app.dir/src/utils.c.o.d"
+  "/home/alexandr/sem3/fundalg/2/7/src/main.c" "CMakeFiles/app.dir/src/main.c.o" "gcc" "CMakeFiles/app.dir/src/main.c.o.d"
+  "/home/alexandr/sem3/fundalg/2/7/src/repo.c" "CMakeFiles/app.dir/src/repo.c.o" "gcc" "CMakeFiles/app.dir/src/repo.c.o.d"
+  "/home/alexandr/sem3/fundalg/2/7/src/responses.c" "CMakeFiles/app.dir/src/responses.c.o" "gcc" "CMakeFiles/app.dir/src/responses.c.o.d"
+  "/home/alexandr/sem3/fundalg/2/7/src/utils.c" "CMakeFiles/app.dir/src/utils.c.o" "gcc" "CMakeFiles/app.dir/src/utils.c.o.d"
   )
 
 # Targets to which this target links.

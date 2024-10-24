@@ -1,4 +1,4 @@
-# Install script for directory: /home/alexandr/sem3/fundalg/2/8
+# Install script for directory: /home/alexandr/sem3/fundalg/2/1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

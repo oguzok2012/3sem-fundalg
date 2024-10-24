@@ -1,26 +1,41 @@
-#include "repo.h"
+#include "../include/repo.h"
 
+#include "../include/repo.h"
 
+Response DichotomyMethod(double min, double max, double eps, double (*function)(double), double* result) {
+    if (min > max)
+        return CreateErrorResponse(ERROR_INVALID_INPUT, "Invalid input");
 
-typedef double (*CalcFunc)(double n);
+    if (eps <= 0)
+        return CreateErrorResponse(ERROR_INVALID_INPUT, "Invalid input");
 
+    if (function(min) * function(max) > 0)
+        return CreateErrorResponse(ERROR_INVALID_INPUT, "Invalid input");
+    
+    double mid;
+    while (max - min > eps) {
+        mid = (max + min) / 2.0;     
+    
+        if (function(mid) == 0.0) {
+            *result = mid;
+            return CreateSuccessResponse(result);
+        }
 
+        if (function(min) * function(mid) < 0)
+            max = mid;
+        else
+            min = mid;
+    } 
 
-double EqCalcGamma(double x) {
-    return exp(-x);
+    *result = mid;
+
+    return CreateSuccessResponse(result);
 }
 
-double Dihotomy(double left, double right, double value, CalcFunc calc_func, double epsilon) {
-    double mid, result;
-    do {
-        mid = (left + right) / 2.0;
-        result = calc_func(mid);
+double equation1(double x) {
+    return x * x - 2;
+}
 
-        if (result > value) {
-            right = mid;
-        } else {
-            left = mid;
-        }
-    } while (fabs(result - value) > epsilon);
-    return mid;
+double equation2(double x) {
+    return pow(x - 1, 2) / (x - 1);
 }

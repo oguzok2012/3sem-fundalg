@@ -1,5 +1,5 @@
 CMakeFiles/app.dir/src/main.c.o: \
- /home/alexandr/sem3/fundalg/2/1/src/main.c /usr/include/stdc-predef.h \
+ /home/alexandr/sem3/fundalg/2/7/src/main.c /usr/include/stdc-predef.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -49,11 +49,18 @@ CMakeFiles/app.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /home/alexandr/sem3/fundalg/2/1/include/responses.h \
- /home/alexandr/sem3/fundalg/2/1/include/utils.h /usr/include/string.h \
+ /home/alexandr/sem3/fundalg/2/7/include/responses.h \
+ /home/alexandr/sem3/fundalg/2/7/include/utils.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/alexandr/sem3/fundalg/2/1/include/responses.h \
- /home/alexandr/sem3/fundalg/2/1/include/repo.h \
- /home/alexandr/sem3/fundalg/2/1/include/utils.h /usr/include/ctype.h
+ /home/alexandr/sem3/fundalg/2/7/include/responses.h \
+ /home/alexandr/sem3/fundalg/2/7/include/repo.h \
+ /home/alexandr/sem3/fundalg/2/7/include/utils.h /usr/include/ctype.h \
+ /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h

@@ -1,7 +1,7 @@
 CMakeFiles/app.dir/src/responses.c.o: \
- /home/alexandr/sem3/fundalg/2/8/src/responses.c \
+ /home/alexandr/sem3/fundalg/2/1/src/responses.c \
  /usr/include/stdc-predef.h \
- /home/alexandr/sem3/fundalg/2/8/include/responses.h /usr/include/stdio.h \
+ /home/alexandr/sem3/fundalg/2/1/include/responses.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

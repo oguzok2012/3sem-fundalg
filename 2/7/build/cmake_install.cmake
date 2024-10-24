@@ -1,4 +1,4 @@
-# Install script for directory: /home/alexandr/sem3/fundalg/2/1
+# Install script for directory: /home/alexandr/sem3/fundalg/2/7
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alexandr/sem3/fundalg/2/1/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alexandr/sem3/fundalg/2/7/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

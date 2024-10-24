@@ -1,3 +1,13 @@
 {
-    "cmake.sourceDirectory": "/home/alexandr/sem3/fundalg/2/8"
+    "cmake.sourceDirectory": "/home/alexandr/sem3/fundalg/2/1",
+    "cmake.debugConfig": {
+        "args": [
+            "-l",
+            "abcd"
+        ]
+    },
+    "files.associations": {
+        "repo.h": "c",
+        "responses.h": "c"
+    }
 }

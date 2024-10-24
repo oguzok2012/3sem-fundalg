@@ -2,7 +2,7 @@
 #include <stdarg.h>
 
 
-Response char_to_val(char c, int base) {
+Response CharToValue(char c, int base) {
     int val;
 
     if (isdigit(c)) {
@@ -10,18 +10,18 @@ Response char_to_val(char c, int base) {
     } else if (isalpha(c)) {
         val = toupper(c) - 'A' + 10;
     } else {
-        return CreateErrorResponse(ERROR_VALUE, "Incorrect digit for base");
+        return CreateErrorResponse(ERROR_VALUE, "Incorrect digit in number");
     }
 
     if (val >= base) {
-        return CreateErrorResponse(ERROR_VALUE, "Incorrect digit for base");
+        return CreateErrorResponse(ERROR_VALUE, "Incorrect digit in number");
     }
 
     return CreateSuccessResponse(&val);
 }
 
 
-char val_to_char(int val) {
+char ValueToChar(int val) {
     if (val < 10) {
         return '0' + val;
     } else {
@@ -29,7 +29,7 @@ char val_to_char(int val) {
     }
 }
 
-Response add_in_base(const char *num1, const char *num2, int base) {
+Response AddInBase(const char *num1, const char *num2, int base) {
     int len1 = strlen(num1);
     int len2 = strlen(num2);
     int max_len = len1 > len2 ? len1 : len2;
@@ -43,42 +43,52 @@ Response add_in_base(const char *num1, const char *num2, int base) {
     int carry = 0;
     int i = len1 - 1, j = len2 - 1, k = max_len;
 
-    while (k >= 0) {  // Изменяем условие на k >= 0 для правильного размещения результата
+    while (k >= 0) {
         int sum = carry;
         
         if (i >= 0) {
-            Response r_part1 = char_to_val(num1[i--], base);
+            Response r_part1 = CharToValue(num1[i--], base);
             if (r_part1.status.code != OK) {
-                free(result);  // Освобождаем память при ошибке
+                free(result);
                 return r_part1;
             }
             sum += *(int*)(r_part1.data);
         }
         if (j >= 0) {
-            Response r_part2 = char_to_val(num2[j--], base);
+            Response r_part2 = CharToValue(num2[j--], base);
             if (r_part2.status.code != OK) {
-                free(result);  // Освобождаем память при ошибке
+                free(result);
                 return r_part2;
             }
             sum += *(int*)(r_part2.data);
         }
 
-        result[k--] = val_to_char(sum % base);
+        result[k--] = ValueToChar(sum % base);
         carry = sum / base;
     }
-
+    
     if (carry > 0) {
-        result[0] = val_to_char(carry);
-        return CreateSuccessResponse(result);  // Возвращаем результат, если есть перенос
-    } else {
-        // Если нет переноса, создаем новую строку без ведущих нулей
-        char *new_result = strdup(result + 1);  // Строка без ведущего нуля
-        free(result);  // Освобождаем память для оригинального результата
+        result[0] = ValueToChar(carry);
+        return CreateSuccessResponse(result);
+    }
+    
+    if (result[0] == '0') {
+        char *new_result = strdup(result + 1);
+        free(result);
         return CreateSuccessResponse(new_result);
     }
+    return CreateSuccessResponse(result);
+        
 }
 
-Response sum_in_base(int base, int num_count, ...) {
+Response SumInBase(int base, int num_count, ...) {
+    if (base < 2 || base > 36) {
+        return CreateErrorResponse(ERROR_VALUE, "Incorrect base");
+    }
+    if (num_count <= 0) {
+        return CreateErrorResponse(ERROR_VALUE, "Incorrect number of argumnents");
+    }
+    
     va_list args;
     va_start(args, num_count);
 
@@ -87,33 +97,30 @@ Response sum_in_base(int base, int num_count, ...) {
         return CreateErrorResponse(ERROR_MEMORY, "Memory allocation error");
     }
 
-    for (int i = 0; i < num_count; ++i) {
+    for (int i = 0; i < num_count; i++) {
         const char *num = va_arg(args, const char *);
 
-        Response r_new_sum = add_in_base(sum, num, base);
+        Response r_new_sum = AddInBase(sum, num, base);
         if (r_new_sum.status.code != OK) {
             free(sum);
             return r_new_sum;
         }
         char *new_sum = (char*)(r_new_sum.data);
-
         free(sum);
         sum = new_sum;
     }
 
     va_end(args);
 
-
-    char *start = sum;  // Указатель на начало результата
+    char *start = sum; 
     while (*sum == '0' && *(sum + 1) != '\0') {
         sum++;
     }
 
-    // Если было смещение, создаем новую строку без ведущих нулей
     if (start != sum) {
         char *new_sum = strdup(sum);
-        free(start);  // Освобождаем оригинальную строку
-        sum = new_sum;  // Обновляем указатель на новую строку
+        free(start);
+        sum = new_sum;
     }
 
     return CreateSuccessResponse(sum);

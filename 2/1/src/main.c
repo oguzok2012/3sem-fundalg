@@ -52,11 +52,13 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
             return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Unknown option");
     }
 
-    if (*option != OPT_C) {
-        if (strlen(argv[2]) > 255) {
-            return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Too long string");
+    if (*option != OPT_C) {        
+        for (int i = 2; i < argc; i++) {
+            if (strlen(argv[i]) > 255) {
+                return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Too long string");
+            }
+            strcpy(argh[i - 2], argv[i]);
         }
-        strcpy(argh[0], argv[2]);
     } else {
         Response r = Atoi(argv[2]);
         if (r.status.code != OK) {
@@ -83,6 +85,7 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
 int HandlerOptL(char** argh, char *output) {
     int str_len = strlen(argh[0]); 
     sprintf(output, "%d", str_len);
+    return 0;
 }
 
 
@@ -104,8 +107,8 @@ int HandlerOptR(char** argh, char *output) {
     }
 
     Strcpy(output, string);
+    return 0;
 }
-
 
 int HandlerOptU(char** argh, char *output) {
     char string[MAX_LENGTH];
@@ -118,6 +121,7 @@ int HandlerOptU(char** argh, char *output) {
             output[i] = string[i];
         }
     }
+    return 0;
 }
 
 int HandlerOptN(char** argh, char *output) {
@@ -125,15 +129,79 @@ int HandlerOptN(char** argh, char *output) {
     Strcpy(string, argh[0]);
 
     char *digits = InitStr(MAX_LENGTH);
-    char *
-    
+    char *letters = InitStr(MAX_LENGTH);
+    char *others = InitStr(MAX_LENGTH);
+
+    if (digits == NULL || letters == NULL || others == NULL) {
+        fprintf(stderr, "%s\n", "Memory allocation error");
+        return 1;
+    }
+
+    int digitIndex = 0;
+    int letterIndex = 0;
+    int otherIndex = 0;
+
+    for (int i = 0; i < Strlen(string); i++) {
+        char c = string[i];
+        if (c >= '0' && c <= '9') {
+            digits[digitIndex++] = c;
+        } else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            letters[letterIndex++] = c;
+        } else {
+            others[otherIndex++] = c;
+        }
+    }
+
+    digits[digitIndex] = '\0';
+    letters[letterIndex] = '\0';
+    others[otherIndex] = '\0';
+
+    Response concatenated = concatStrings(digits, letters);
+    if (concatenated.status.code != OK) {
+        fprintf(stderr, "%s\n", concatenated.status.msg);
+        return 1;
+    }
+
+    Response final_result = concatStrings(concatenated.data, others);
+    if (final_result.status.code != OK) {
+        fprintf(stderr, "%s\n", final_result.status.msg);
+        free(concatenated.data);
+        return 1;
+    }
+
+    Strcpy(output, final_result.data);
+
+    free(concatenated.data);
+    free(final_result.data);
+    free(digits);
+    free(letters);
+    free(others);
+
+    return 0;
 }
 
+int HandlerOptC(char** argh, char *output) {
+    char result[MAX_LENGTH * MAX_STRINGS] = "";
+    int num_strings = 0;
+    
+    while (argh[num_strings][0] != '\0') {
+        num_strings++;
+    }
+    
+    for (int i = 0; i < num_strings; i++) {
+        int rand_index = rand() % num_strings;
+        Strcat(result, argh[rand_index]);
+        Strcat(result, " ");
+    }
+    
+    strcpy(output, result);
+    return 0;
+}
 
 // \== Handlers
 
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
 
     kOpts opt = OPT_UNKNOWN;
     DECLARE_STRING_ARRAY(argh, MAX_STRINGS)
@@ -143,6 +211,7 @@ int main(int argc, char **argv) {
         HandlerOptR,
         HandlerOptU,
         HandlerOptN,
+        HandlerOptC
     };
     
     Response response = GetOpts(argc, argv, &opt, argh); 

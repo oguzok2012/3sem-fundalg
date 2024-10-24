@@ -172,7 +172,7 @@ int Toupper(int c) {
     return c;
 }
 
-Response concat_strings(const char *str1, const char *str2) {
+Response concatStrings(const char *str1, const char *str2) {
     size_t length1 = strlen(str1);
     size_t length2 = strlen(str2);
 
@@ -185,4 +185,20 @@ Response concat_strings(const char *str1, const char *str2) {
     strcat(result, str2);
 
     return CreateSuccessResponse(result);
+}
+
+char* Strcat(char *dest, const char *src) {
+    char *ptr = dest;
+
+    while (*ptr != '\0') {
+        ptr++;
+    }
+
+    while (*src != '\0') {
+        *ptr++ = *src++;
+    }
+
+    *ptr = '\0';
+
+    return dest;
 }

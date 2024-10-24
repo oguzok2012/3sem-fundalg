@@ -16,5 +16,7 @@ size_t Strlen(const char *str);
 char *Strcpy(char *dest, const char *src);
 int Toupper(int c);
 char *InitStr(size_t length);
+Response concatStrings(const char *str1, const char *str2);
+char* Strcat(char *dest, const char *src);
 
 #endif
