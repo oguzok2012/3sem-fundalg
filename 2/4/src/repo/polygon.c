@@ -11,11 +11,18 @@ double CrossProduct(Point p1, Point p2, Point p3) {
 }
 
 
-bool IsConvexPolygon(int num_points, ...) {
+void IsConvexPolygon(int num_points, ...) {
     va_list args;
     va_start(args, num_points);
 
-    Point points[num_points];
+    //Point points[num_points];
+    Point* points = (Point*) malloc(num_points * sizeof(Point));
+    if (points == NULL) {
+        fprintf(stderr, "Memory allocation error\n");
+        va_end(args);
+        return;
+    }
+
     for (int i = 0; i < num_points; i++) {
         points[i].x = va_arg(args, double);
         points[i].y = va_arg(args, double);
@@ -34,17 +41,20 @@ bool IsConvexPolygon(int num_points, ...) {
         if (cross_product > 0) {
             if (sign < 0) {
                 printf("Polygon is NOT convex\n");
-                return false;
+                free(points);
+                return;
             }
             sign = 1;
         } else if (cross_product < 0) {
             if (sign > 0) {
                 printf("Polygon is NOT convex\n");
-                return false;
+                free(points);
+                return;
             }
             sign = -1;
         }
     }
     printf("Polygon IS convex\n");
-    return true;
+    free(points);
+    return;
 }

@@ -1,0 +1,4 @@
+id: 3
+ name: liza
+ surname: rrr
+ group: 40, avg: 3.000000

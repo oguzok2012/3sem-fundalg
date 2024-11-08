@@ -62,18 +62,15 @@ Response GetOpts(int argc, char** argv, kOpts *option, char **argh) {
     } else {
         Response r = Atoi(argv[2]);
         if (r.status.code != OK) {
-            return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Seed must be type of unsigned int");
+            return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Seed must be type of int");
         }
         int seed = *(int*)r.data;
-        if (seed <= 0 ) {
-            return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Seed cant be not positive");
-        }
-        strcpy(argh[0], argv[2]);
+        srand(seed);
         for (int i = 3; i < argc; i++) {
             if (strlen(argv[i]) > 255) {
                 return CreateErrorResponse(ERROR_READING_ARGUMENTS, "Too long string");
             }
-            strcpy(argh[i - 2], argv[i]);
+            strcpy(argh[i - 3], argv[i]);
         }
     }
     return CreateSuccessResponse(NULL);
@@ -180,21 +177,37 @@ int HandlerOptN(char** argh, char *output) {
     return 0;
 }
 
+
 int HandlerOptC(char** argh, char *output) {
-    char result[MAX_LENGTH * MAX_STRINGS] = "";
+    char *result = InitStr(MAX_LENGTH * MAX_STRINGS);
+    if (result == NULL) {
+        fprintf(stderr, "Memory allocation error");
+        return 1;
+    } 
     int num_strings = 0;
     
     while (argh[num_strings][0] != '\0') {
         num_strings++;
     }
     
+    int indices[num_strings];
     for (int i = 0; i < num_strings; i++) {
-        int rand_index = rand() % num_strings;
-        Strcat(result, argh[rand_index]);
+        indices[i] = i;
+    }
+
+    for (int i = num_strings - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        int temp = indices[i];
+        indices[i] = indices[j];
+        indices[j] = temp;
+    }
+
+    for (int i = 0; i < num_strings; i++) {
+        Strcat(result, argh[indices[i]]);
         Strcat(result, " ");
     }
-    
-    strcpy(output, result);
+
+    Strcpy(output, result);
     return 0;
 }
 

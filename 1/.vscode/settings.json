@@ -1,5 +1,4 @@
 {
-    "files.associations": {
-        "stdio.h": "c"
-    }
+    "cmake.sourceDirectory": "/home/alexandr/sem3/fundalg/3/5",
+    
 }

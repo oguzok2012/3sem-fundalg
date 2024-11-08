@@ -13,7 +13,7 @@
 
 #define uint unsigned int
 
-bool IsConvexPolygon(int num_points, ...);
+void IsConvexPolygon(int num_points, ...);
 double PolynomlValue(double x, int degree, ...);
 void FindKaprekarNumbers(int ase, int count, ...);
 

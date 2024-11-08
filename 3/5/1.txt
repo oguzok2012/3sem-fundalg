@@ -1,0 +1,6 @@
+1 sasha rrr 210 1 2 3 4 6
+4 nik rrr 20 1 2 3 4 7
+2 dima rrr 30 1 2 3 4 5
+3 liza rrr 40 1 2 3 4 10
+5 sasha rrr 50 1 2 3 4 5
+5 sasha rrr 50 1 2 3 4 1

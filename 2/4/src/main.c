@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv) {
     printf("---------\n");
-    IsConvexPolygon(5,   0.0, 1.0,   1.0, 1.0,   1.0, 0.5,   1.0, 0.0,    0.0, 0.0);
+    IsConvexPolygon(5,   1.0, 0.0,    0.0, 0.0,   0.0, 1.0,   1.0, 1.0,   0.9, 0.4);
 
     printf("---------\n");
     PolynomlValue(2.0, 2, 3.0, 2.0, 1.0);
