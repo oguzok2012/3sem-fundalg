@@ -1,9 +1,0 @@
-Hello     WORLd1
-This    is a    simple    test
-for   
-
-
-
-     checking the       function
-and    ensuring that it     works correctly
-with     different     lexemes.

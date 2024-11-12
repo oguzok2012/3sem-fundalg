@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/app.dir/src/responses.c.o CMakeFiles/app.dir/src/utils.c.o CMakeFiles/app.dir/src/repo.c.o CMakeFiles/app.dir/src/main.c.o -o app 
